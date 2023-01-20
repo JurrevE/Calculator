@@ -1,0 +1,104 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    background-color: lightblue;
+}
+
+button:hover {background-color: #6badc1}
+
+button:active {
+  background-color: #6badc1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 100px 0px 100px 0px;
+    font-size: x-large;
+}
+
+footer {
+    margin-top:100px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    height: 500px;
+    width: 300px;
+    background-color: tan;
+    border: black solid 3px;
+    border-radius: 25px;
+}
+
+.screen {
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border: solid black 2px;
+    border-radius: 25px;
+    width: 80%;
+    height: 20%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.buttonsdiv {
+    align-self: center;
+    background-color: pink;
+    width: 85%;
+    height: 60%;
+    border: black solid 1px;
+    border-radius: 25px;
+    margin-bottom: 5%;
+}
+
+.digits {
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: large;
+}
+
+.operations {
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: large;
+}
+
+#clear {
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: large;
+}
+
+#enter {
+    height: 25%;
+    width: 25%;
+    border-radius: 25px;
+    font-size: large;
+}
+
+.buttonsdiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
