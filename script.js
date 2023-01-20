@@ -38,21 +38,12 @@ function operate(operator, num1, num2) {
     }
 
 //funtions to populate the screen with numbers when pressing number buttons.
-// let changeNumber = function() {
-//     document.querySelector(".outputline").innerHTML = "monkeballs";
+const btn = document.querySelectorAll('.digits');
+btn.forEach(digits => {
+    digits.addEventListener('click', (e ) => {
+        document.querySelector(".outputline").innerHTML = e.target.value;
+})
+});
 
-// }
-const btn = document.querySelector('.digits');
-btn.addEventListener('click', (e) => {
-    document.querySelector(".outputline").innerHTML = e.target.value;
-}
-);
-
-// let numBtns = document.querySelectorAll(".digits");
-// numBtns.forEach(function (i) {
-//     i.addEventListener("click", changeNumber())
-
-// }
-// )
 
 
