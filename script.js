@@ -41,9 +41,12 @@ function operate(operator, num1, num2) {
 const btn = document.querySelectorAll('.digits');
 btn.forEach(digits => {
     digits.addEventListener('click', (e ) => {
-        document.querySelector(".outputline").innerHTML = e.target.value;
-})
+        document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value);
+        let firstinput = e.target.value
+        console.log(firstinput)
+    })
 });
+
 
 
 
