@@ -38,20 +38,34 @@ function operate(operator, num1, num2) {
     }
 
 //funtions to populate the screen with numbers when pressing number buttons.
-const btn = document.querySelectorAll('.digits');
-btn.forEach(digits => {
+const firstdigits = document.querySelectorAll('.digits');
+firstdigits.forEach(digits => {
     digits.addEventListener('click', (e ) => {
-        document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value);
-        // let firstinput = e.target.value
-        //  console.log(firstinput)
-        
+        document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value); 
     })
 });
 
+//first screen value storing and displaying function.
 let readOutputline = function() {
     let outputLine = document.querySelector(".outputline")
     console.log(outputLine.innerText)
 }
 
+let operation =""
+ const operationsbtn = document.querySelectorAll(".operations");
+ operationsbtn.forEach(operations => {
+    operations.addEventListener("click", (e) => {
+        document.querySelector(".outputline").textContent = ""
+         operation = e.target.value;
+         console.log(operation)
+     })
+})
+
+// const seconddigits = document.querySelectorAll('.digits');
+// seconddigits.forEach(digits => {
+//     digits.addEventListener('click', (e ) => {
+//         document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value); 
+//     })
+// });
 
 
