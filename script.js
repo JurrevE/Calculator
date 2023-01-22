@@ -1,4 +1,4 @@
-//functions for 
+//functions for basic arithmatic used in the calculator.
 function add(a, b){
     return parseFloat(a) + parseFloat(b);
 }
@@ -42,11 +42,16 @@ const btn = document.querySelectorAll('.digits');
 btn.forEach(digits => {
     digits.addEventListener('click', (e ) => {
         document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value);
-        let firstinput = e.target.value
-        console.log(firstinput)
+        // let firstinput = e.target.value
+        //  console.log(firstinput)
+        
     })
 });
 
+let readOutputline = function() {
+    let outputLine = document.querySelector(".outputline")
+    console.log(outputLine.innerText)
+}
 
 
 
