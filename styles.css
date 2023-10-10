@@ -102,3 +102,6 @@ footer {
     justify-content: center;
 }
 
+.outputline {
+    background-color: pink;
+}

@@ -24,48 +24,61 @@ function operate(operator, num1, num2) {
     switch(operator) {
         case "+":
            return add(num1,num2);
-           break;
         case "-":
             return subtract(num1,num2);
-            break;
         case "*":
             return multiply(num1,num2);
-            break
         case "/":
             return divide(num1,num2);
-            break;
         }
     }
-
-//funtions to populate the screen with numbers when pressing number buttons.
-const firstdigits = document.querySelectorAll('.digits');
-firstdigits.forEach(digits => {
-    digits.addEventListener('click', (e ) => {
-        document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value); 
-    })
+    let firstnumber = []
+    let secondnumber = []
+    let operation = ""
+    let isOperatorPressed = false;
+   
+const screennumbers = document.querySelectorAll('.digits');
+screennumbers.forEach(digits => {
+    digits.addEventListener('click', (e) => {
+        document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value);
+        if(isOperatorPressed === true) {
+        let clickedNumber = e.target.value;
+        secondnumber.push(clickedNumber)
+        }
+        else {
+            let clickedNumber = e.target.value;
+            firstnumber.push(clickedNumber)
+        }
+     })
 });
 
-//first screen value storing and displaying function.
-let readOutputline = function() {
-    let outputLine = document.querySelector(".outputline")
-    console.log(outputLine.innerText)
-}
-
-let operation =""
- const operationsbtn = document.querySelectorAll(".operations");
+const operationsbtn = document.querySelectorAll(".operations");
  operationsbtn.forEach(operations => {
     operations.addEventListener("click", (e) => {
         document.querySelector(".outputline").textContent = ""
          operation = e.target.value;
          console.log(operation)
+         isOperatorPressed = true;
      })
 })
 
-// const seconddigits = document.querySelectorAll('.digits');
-// seconddigits.forEach(digits => {
-//     digits.addEventListener('click', (e ) => {
-//         document.querySelector(".outputline").insertAdjacentHTML("beforeend", e.target.value); 
-//     })
-// });
+const enterbtn = document.getElementById("enter")
+enterbtn.addEventListener("click", function(){
+    const num1 = firstnumber.join("")
+    const num2 = secondnumber.join("")
+    document.querySelector(".outputline").textContent = operate(operation,num1,num2)
+    
+
+})
+
+const clearbtn = document.getElementById("clear")
+clearbtn.addEventListener("click", function(){
+    document.querySelector(".outputline").textContent = ""
+    while(firstnumber.length>0){
+        firstnumber.pop();}
+    while(secondnumber.length>0){
+        secondnumber.pop();}
+})
+
 
 
