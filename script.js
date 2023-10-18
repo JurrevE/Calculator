@@ -32,9 +32,9 @@ function operate(operator, num1, num2) {
             return divide(num1,num2);
         }
     }
-    let firstnumber = []
+    let firstnumber = [];
     let secondnumber = []
-    let operation = ""
+    let operation = "";
     let isOperatorPressed = false;
    
 const screennumbers = document.querySelectorAll('.digits');
@@ -47,7 +47,7 @@ screennumbers.forEach(digits => {
         }
         else {
             let clickedNumber = e.target.value;
-            firstnumber.push(clickedNumber)
+            firstnumber.push(clickedNumber);
         }
      })
 });
@@ -57,27 +57,32 @@ const operationsbtn = document.querySelectorAll(".operations");
     operations.addEventListener("click", (e) => {
         document.querySelector(".outputline").textContent = ""
          operation = e.target.value;
-         console.log(operation)
+         console.log(operation);
          isOperatorPressed = true;
      })
 })
 
 const enterbtn = document.getElementById("enter")
 enterbtn.addEventListener("click", function(){
-    const num1 = firstnumber.join("")
-    const num2 = secondnumber.join("")
-    document.querySelector(".outputline").textContent = operate(operation,num1,num2)
-    
+    const num1 = firstnumber.join("");
+    const num2 = secondnumber.join("");
 
+    console.log(`nummer 1 ${num1}, nummer 2 ${num2}`);
+
+    document.querySelector(".outputline").textContent = operate(operation,num1,num2);
 })
 
 const clearbtn = document.getElementById("clear")
 clearbtn.addEventListener("click", function(){
     document.querySelector(".outputline").textContent = ""
-    while(firstnumber.length>0){
-        firstnumber.pop();}
-    while(secondnumber.length>0){
-        secondnumber.pop();}
+    operation = ""
+    secondnumber = [];
+    firstnumber = [];
+    isOperatorPressed = false;
+    // while(firstnumber.length>0){
+    //     firstnumber.pop();}
+    // while(secondnumber.length>0){
+    //     secondnumber.pop();}
 })
 
 
